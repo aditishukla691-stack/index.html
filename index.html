@@ -683,6 +683,25 @@
       .timeline-card::before,
       .timeline-item:nth-child(even) .timeline-card::before { display: none; }
     }
+    .hero-image {
+  position: absolute;
+  right: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 60px rgba(124,58,237,0.3);
+  z-index: 2;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
   </style>
 </head>
 <body>
@@ -705,6 +724,9 @@
   <section class="hero" id="home">
     <div class="hero-grid-line"></div>
     <div class="hero-bg-circle"></div>
+    <div class="hero-image">
+  <img src="photo.jpg" alt="Aditi Shukla" />
+</div>
     <div class="hero-content">
       <div class="hero-tag">Available for Work · Digital Marketer</div>
       <h1>
