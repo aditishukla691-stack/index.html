@@ -1,304 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Aditi Shukla | Digital Marketing</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-:root{
---bg:#0b0d0f;
---surface:#141618;
---card:#1a1d20;
---border:#2a2d32;
---accent:#7c3aed;
---text:#f0ece4;
---muted:#8a8a8a;
---light:#c8c4bc;
-}
-
-body{
-font-family:Poppins,sans-serif;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden;
-}
-
-/* NAV */
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:1.2rem 2rem;
-display:flex;
-justify-content:space-between;
-background:rgba(11,13,15,0.9);
-border-bottom:1px solid var(--border);
-z-index:100;
-}
-
-.nav-links{display:flex;gap:2rem;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;}
-.nav-links a:hover{color:var(--accent);}
-
-/* HERO */
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-padding:0 2rem;
-max-width:1200px;
-margin:auto;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.hero-content{flex:1;}
-.hero-image{
-flex:1;
-max-width:350px;
-}
-
-.hero-image img{
-width:100%;
-border-radius:20px;
-border:3px solid var(--accent);
-}
-
-h1{font-size:3rem;font-weight:800;}
-.highlight{color:var(--accent);}
-
-.hero-desc{
-margin:1rem 0;
-color:var(--light);
-line-height:1.6;
-}
-
-.btn{
-display:inline-block;
-padding:0.8rem 1.8rem;
-background:var(--accent);
-color:white;
-text-decoration:none;
-border-radius:4px;
-margin-top:1rem;
-}
-
-/* SECTION */
-section{
-max-width:1200px;
-margin:auto;
-padding:5rem 2rem;
-}
-
-.section-title{
-font-size:2rem;
-font-weight:700;
-margin-bottom:1rem;
-}
-
-/* PROJECT GRID FIX */
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:1.5rem;
-}
-
-/* PROJECT CARD */
-.project-card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:10px;
-padding:1.8rem;
-display:flex;
-flex-direction:column;
-gap:1rem;
-min-height:260px;
-justify-content:space-between;
-text-decoration:none;
-color:inherit;
-transition:0.3s;
-}
-
-.project-card:hover{
-transform:translateY(-5px);
-border-color:var(--accent);
-}
-
-.project-header{
-display:flex;
-justify-content:space-between;
-}
-
-.project-type{
-font-size:0.7rem;
-color:var(--accent);
-}
-
-.project-date{
-font-size:0.8rem;
-color:var(--muted);
-}
-
-.project-title{
-font-weight:700;
-}
-
-.project-subtitle{
-font-size:0.85rem;
-color:var(--accent);
-}
-
-.project-points{
-list-style:none;
-}
-
-.project-points li{
-font-size:0.85rem;
-color:var(--light);
-margin-bottom:4px;
-}
-
-/* CONTACT */
-#contact{
-text-align:center;
-}
-
-.contact-links a{
-display:inline-block;
-margin:10px;
-color:white;
-text-decoration:none;
-}
-
-/* MOBILE FIX */
-@media(max-width:768px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-padding-top:6rem;
-}
-
-.hero-image{
-max-width:250px;
-}
-
-.nav-links{
-display:none;
-}
-
-.projects-grid{
-grid-template-columns:1fr;
-}
-
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-<div>Aditi.</div>
-<div class="nav-links">
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-<div class="hero-content">
-<h1>Hi, I'm <span class="highlight">Aditi Shukla</span></h1>
-<p class="hero-desc">
-Digital Marketing Specialist focused on SEO, Google Ads, and lead generation.
-</p>
-<a href="#projects" class="btn">View My Work</a>
-</div>
-
-<div class="hero-image">
-<img src="photo.jpg" alt="Aditi">
-</div>
-</section>
-
 <!-- PROJECTS -->
 <section id="projects">
-<h2 class="section-title">Projects</h2>
+  <div class="section-label">My Work</div>
+  <div class="section-title">Projects & Case Studies</div>
+  <p class="section-sub">
+    Hands-on projects covering SEO, Google Ads, and Meta Ads campaigns.
+  </p>
 
-<div class="projects-grid">
+  <div class="projects-grid">
 
-<div class="project-card">
-<div class="project-header">
-<span class="project-type">Google Ads</span>
-<span class="project-date">Feb 2026</span>
-</div>
-<div class="project-title">Search Campaign</div>
-<div class="project-subtitle">Lead Generation</div>
-<ul class="project-points">
-<li>Keyword research</li>
-<li>Ad groups creation</li>
-<li>CTR optimization</li>
-</ul>
-</div>
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-type">Google Ads</span>
+        <span class="project-date">Feb 2026</span>
+      </div>
+      <div class="project-title">Google Ads Search Campaign</div>
+      <div class="project-subtitle">Keyword Planner • Lead Generation</div>
+      <ul class="project-points">
+        <li>Researched 20+ high-intent keywords</li>
+        <li>Created structured ad groups</li>
+        <li>Wrote high CTR ad copies</li>
+        <li>Applied negative keywords</li>
+      </ul>
+    </div>
 
-<div class="project-card">
-<div class="project-header">
-<span class="project-type">Meta Ads</span>
-<span class="project-date">Mar 2026</span>
-</div>
-<div class="project-title">Lead Generation Campaign</div>
-<div class="project-subtitle">Facebook & Instagram</div>
-<ul class="project-points">
-<li>Audience targeting</li>
-<li>Ad creatives</li>
-<li>Campaign optimization</li>
-</ul>
-</div>
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-type">Meta Ads</span>
+        <span class="project-date">Mar 2026</span>
+      </div>
+      <div class="project-title">Meta Lead Generation Campaign</div>
+      <div class="project-subtitle">Facebook & Instagram Ads</div>
+      <ul class="project-points">
+        <li>Defined audience targeting</li>
+        <li>Designed ad creatives</li>
+        <li>Optimized campaigns for conversions</li>
+        <li>Tracked CTR & lead performance</li>
+      </ul>
+    </div>
 
-<a href="https://aditishukla.in" target="_blank" class="project-card">
-<div class="project-header">
-<span class="project-type">SEO</span>
-<span class="project-date">Live</span>
-</div>
-<div class="project-title">SEO Portfolio Project</div>
-<div class="project-subtitle">On-Page SEO</div>
-<ul class="project-points">
-<li>Technical fixes</li>
-<li>Keyword strategy</li>
-<li>Performance improvements</li>
-</ul>
-</a>
+    <!-- PROJECT 3 (CLICKABLE LIVE) -->
+    <a href="https://aditishukla.in" target="_blank" class="project-card" style="text-decoration:none;">
+      <div class="project-header">
+        <span class="project-type">SEO</span>
+        <span class="project-date">Mar 2026</span>
+      </div>
+      <div class="project-title">SEO Audit – aditishukla.in (Live)</div>
+      <div class="project-subtitle">On-Page SEO • Search Console</div>
+      <ul class="project-points">
+        <li>Optimized meta tags & headings</li>
+        <li>Improved page speed</li>
+        <li>Fixed technical SEO issues</li>
+        <li>Performed keyword research & content strategy</li>
+      </ul>
+    </a>
 
-<div class="project-card">
-<div class="project-header">
-<span class="project-type">Content</span>
-<span class="project-date">Mar 2026</span>
-</div>
-<div class="project-title">Blog SEO Project</div>
-<div class="project-subtitle">Content Marketing</div>
-<ul class="project-points">
-<li>SEO writing</li>
-<li>Keyword placement</li>
-<li>Engagement tracking</li>
-</ul>
-</div>
+    <!-- PROJECT 4 -->
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-type">Content Marketing</span>
+        <span class="project-date">Mar 2026</span>
+      </div>
+      <div class="project-title">Content Marketing Blog Project</div>
+      <div class="project-subtitle">SEO Content • Blogger & LinkedIn</div>
+      <ul class="project-points">
+        <li>Created SEO-friendly blog content</li>
+        <li>Optimized headings & keyword placement</li>
+        <li>Published content on Blogger & LinkedIn</li>
+        <li>Tracked engagement & reach</li>
+      </ul>
+    </div>
 
-</div>
+  </div>
 </section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="section-title">Contact</h2>
-<div class="contact-links">
-<a href="mailto:aditishukla691@gmail.com">Email</a>
-<a href="https://linkedin.com" target="_blank">LinkedIn</a>
-</div>
-</section>
-
-</body>
-</html>
