@@ -12,6 +12,7 @@
   <meta name="author" content="Aditi Shukla" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://aditishukla.in/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMic+PGNpcmNsZSBjeD0nMTYnIGN5PScxNicgcj0nMTYnIGZpbGw9JyM4YjVjZjYnLz48dGV4dCB4PScxNicgeT0nMjInIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtc2l6ZT0nMjAnIGZpbGw9J3doaXRlJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9J2JvbGQnPkE8L3RleHQ+PC9zdmc+" />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
@@ -46,7 +47,7 @@
     "sameAs": [
       "https://linkedin.com/in/aditi-shukla-dm",
       "https://aditishukla.in",
-      "http://blog.aditishukla.in"
+      "https://blog.aditishukla.in"
     ],
     "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Content Marketing", "Email Marketing", "Social Media Marketing"],
     "address": {
@@ -58,8 +59,10 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" /></noscript>
   <style>
     *,
     *::before,
@@ -333,11 +336,9 @@
     }
 
     .hero-stats {
-      position: absolute;
-      right: 4rem;
-      bottom: 4rem;
       display: flex;
-      gap: 3rem;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
       z-index: 2;
       animation: fadeUp 1s ease 0.3s both;
     }
@@ -918,9 +919,7 @@
         padding: 1rem 1.5rem;
       }
 
-      .nav-links {
-        display: none;
-      }
+
 
       .hero {
         padding: 6rem 1.5rem 3rem;
@@ -1004,6 +1003,92 @@
         height: 240px;
       }
     }
+    /* ---- Project Result Chips ---- */
+    .project-results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .result-chip {
+      padding: 0.25rem 0.75rem;
+      background: rgba(124, 58, 237, 0.12);
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent2);
+    }
+
+    /* ---- Featured Project Card ---- */
+    .project-card--featured {
+      border-color: rgba(124, 58, 237, 0.4);
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), var(--card));
+    }
+
+    .project-card--featured::after {
+      content: '\2B50 Featured';
+      position: absolute;
+      top: -1px;
+      right: 1.5rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--bg);
+      padding: 0.2rem 0.6rem;
+      border-radius: 0 0 6px 6px;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      border-top: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ---- Hamburger Menu ---- */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.4rem;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(11, 13, 15, 0.97);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1.2rem;
+        z-index: 99;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1rem; }
+    }
   </style>
 </head>
 
@@ -1019,6 +1104,9 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
     <a href="https://mail.google.com/mail/?view=cm&to=aditishukla691@gmail.com" target="_blank" class="btn-primary"
       style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">Hire Me</a>
   </nav>
@@ -1038,7 +1126,7 @@
         <a href="#projects" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-outline">Get in Touch</a>
       </div>
-      <div class="hero-stats" style="position:static; display:flex; gap:2.5rem; margin-top:2.5rem;">
+      <div class="hero-stats">
         <div class="stat">
           <div class="stat-num">4+</div>
           <div class="stat-label">Projects</div>
@@ -1275,7 +1363,7 @@
           <div class="result-chip">SEO Optimized</div>
           <div class="result-chip">Blogger Platform</div>
         </div>
-        <a href="http://blog.aditishukla.in" target="_blank" class="project-link" style="margin-top:0.8rem; align-self:flex-start;">
+        <a href="https://blog.aditishukla.in" target="_blank" class="project-link" style="margin-top:0.8rem; align-self:flex-start;">
           🌐 Read My Blog →
         </a>
       </div>
@@ -1409,6 +1497,20 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger-btn');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
   </script>
 
 </body>
