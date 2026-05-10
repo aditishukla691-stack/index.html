@@ -182,15 +182,8 @@
     }
 
     @keyframes floatPhoto {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .hero-photo-wrap::after {
@@ -267,17 +260,8 @@
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.5;
-        transform: scale(1.3);
-      }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
     }
 
     h1 {
@@ -289,9 +273,7 @@
       margin-bottom: 1.5rem;
     }
 
-    h1 .highlight {
-      color: var(--accent);
-    }
+    h1 .highlight { color: var(--accent); }
 
     .hero-desc {
       font-size: 1.1rem;
@@ -353,9 +335,7 @@
       animation: fadeUp 1s ease 0.3s both;
     }
 
-    .stat {
-      text-align: center;
-    }
+    .stat { text-align: center; }
 
     .stat-num {
       font-family: 'Poppins', sans-serif;
@@ -373,9 +353,7 @@
       margin-top: 0.3rem;
     }
 
-    section {
-      padding: 6rem 4rem;
-    }
+    section { padding: 6rem 4rem; }
 
     .section-label {
       font-size: 0.75rem;
@@ -409,9 +387,7 @@
       margin: 0 4rem;
     }
 
-    #skills {
-      background: var(--surface);
-    }
+    #skills { background: var(--surface); }
 
     .skills-grid {
       display: grid;
@@ -447,9 +423,7 @@
       transform: translateY(-4px);
     }
 
-    .skill-card:hover::before {
-      transform: scaleY(1);
-    }
+    .skill-card:hover::before { transform: scaleY(1); }
 
     .skill-icon {
       font-size: 1.8rem;
@@ -486,9 +460,7 @@
       font-weight: 500;
     }
 
-    #projects {
-      background: var(--bg);
-    }
+    #projects { background: var(--bg); }
 
     .projects-grid {
       display: grid;
@@ -579,6 +551,48 @@
       font-size: 0.75rem;
     }
 
+    /* ---- Case Study Box ---- */
+    .case-study {
+      background: rgba(124, 58, 237, 0.05);
+      border: 1px solid rgba(124, 58, 237, 0.18);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-top: 0.25rem;
+    }
+
+    .case-study-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.1rem;
+    }
+
+    .case-study-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 0.4rem 0.6rem;
+      align-items: baseline;
+    }
+
+    .cs-key {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent2);
+      white-space: nowrap;
+    }
+
+    .cs-val {
+      font-size: 0.78rem;
+      color: var(--light);
+      line-height: 1.5;
+    }
+
     .project-tools {
       display: flex;
       flex-wrap: wrap;
@@ -602,13 +616,9 @@
       transition: all 0.2s;
     }
 
-    .project-link:hover {
-      background: rgba(124, 58, 237, 0.2);
-    }
+    .project-link:hover { background: rgba(124, 58, 237, 0.2); }
 
-    #tools {
-      background: var(--surface);
-    }
+    #tools { background: var(--surface); }
 
     .tools-list {
       display: flex;
@@ -636,13 +646,9 @@
       transform: translateY(-2px);
     }
 
-    .tool-emoji {
-      font-size: 1.1rem;
-    }
+    .tool-emoji { font-size: 1.1rem; }
 
-    #education {
-      background: var(--bg);
-    }
+    #education { background: var(--bg); }
 
     .timeline {
       position: relative;
@@ -700,13 +706,8 @@
       transition: opacity 0.3s;
     }
 
-    .timeline-item:hover .timeline-dot::before {
-      opacity: 1;
-    }
-
-    .timeline-item:hover .timeline-dot {
-      box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.15);
-    }
+    .timeline-item:hover .timeline-dot::before { opacity: 1; }
+    .timeline-item:hover .timeline-dot { box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.15); }
 
     .timeline-card {
       background: var(--card);
@@ -780,9 +781,7 @@
       color: var(--muted);
     }
 
-    #certifications {
-      background: var(--surface);
-    }
+    #certifications { background: var(--surface); }
 
     .cert-grid {
       display: grid;
@@ -837,14 +836,8 @@
       text-align: center;
     }
 
-    #contact .section-title {
-      margin: 0 auto 1rem;
-    }
-
-    #contact .section-sub {
-      margin: 0 auto 3rem;
-      text-align: center;
-    }
+    #contact .section-title { margin: 0 auto 1rem; }
+    #contact .section-sub { margin: 0 auto 3rem; text-align: center; }
 
     .contact-links {
       display: flex;
@@ -885,15 +878,8 @@
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .fade-in {
@@ -907,116 +893,33 @@
       transform: translateY(0);
     }
 
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--border);
-      border-radius: 3px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent);
-    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
     @media (max-width: 768px) {
-      nav {
-        padding: 1rem 1.5rem;
-      }
-
-
-
-      .hero {
-        padding: 6rem 1.5rem 3rem;
-        min-height: auto;
-        padding-bottom: 8rem;
-      }
-
-      .hero-stats {
-        right: 1.5rem;
-        bottom: 2rem;
-        gap: 1.5rem;
-      }
-
-      section {
-        padding: 4rem 1.5rem;
-      }
-
-      .divider {
-        margin: 0 1.5rem;
-      }
-
-      footer {
-        padding: 1.5rem;
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-      }
-
-      .timeline::before {
-        left: 20px;
-      }
-
-      .timeline-item,
-      .timeline-item:nth-child(even) {
-        padding-left: 3.5rem;
-        padding-right: 0;
-        justify-content: flex-start;
-      }
-
-      .timeline-dot {
-        left: 20px;
-      }
-
-      .timeline-card::before,
-      .timeline-item:nth-child(even) .timeline-card::before {
-        display: none;
-      }
-
-      .hero-photo-wrap {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-      }
-
-      .hero-photo {
-        height: 300px;
-      }
-
-      .hero {
-        flex-direction: column-reverse;
-        gap: 2rem;
-        text-align: center;
-        padding-top: 7rem;
-      }
-
-      .hero-content {
-        max-width: 100%;
-      }
-
-      .hero-cta {
-        justify-content: center;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-      }
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 6rem 1.5rem 3rem; min-height: auto; padding-bottom: 8rem; }
+      .hero-stats { right: 1.5rem; bottom: 2rem; gap: 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .divider { margin: 0 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .timeline::before { left: 20px; }
+      .timeline-item, .timeline-item:nth-child(even) { padding-left: 3.5rem; padding-right: 0; justify-content: flex-start; }
+      .timeline-dot { left: 20px; }
+      .timeline-card::before, .timeline-item:nth-child(even) .timeline-card::before { display: none; }
+      .hero-photo-wrap { width: 100%; max-width: 320px; margin: 0 auto; }
+      .hero-photo { height: 300px; }
+      .hero { flex-direction: column-reverse; gap: 2rem; text-align: center; padding-top: 7rem; }
+      .hero-content { max-width: 100%; }
+      .hero-cta { justify-content: center; }
+      .contact-container { grid-template-columns: 1fr !important; gap: 2rem !important; }
     }
 
     @media (max-width: 480px) {
-      .hero-photo-wrap {
-        max-width: 260px;
-      }
-
-      .hero-photo {
-        height: 240px;
-      }
+      .hero-photo-wrap { max-width: 260px; }
+      .hero-photo { height: 240px; }
     }
 
     /* ---- Project Result Chips ---- */
@@ -1080,23 +983,12 @@
       transition: all 0.3s;
     }
 
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
+      .hamburger { display: flex; }
       .nav-links {
         display: none;
         position: fixed;
@@ -1111,14 +1003,8 @@
         gap: 1.2rem;
         z-index: 99;
       }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        font-size: 1rem;
-      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1rem; }
     }
   </style>
 </head>
@@ -1181,16 +1067,13 @@
     <section id="services">
       <div class="section-label">Solutions</div>
       <h2 class="section-title">My Services</h2>
-      <p class="section-sub">High-performance digital marketing services tailored to help your business find new customers and grow.
-      </p>
+      <p class="section-sub">High-performance digital marketing services tailored to help your business find new customers and grow.</p>
       <div class="skills-grid fade-in">
 
-        <!-- SEO -->
         <div class="skill-card">
           <div class="skill-icon">🔍</div>
           <div class="skill-name">SEO</div>
-          <div class="skill-desc">Hands-on SEO auditing to fix technical issues, improve page speed, and get pages
-            indexed on Google.</div>
+          <div class="skill-desc">Hands-on SEO auditing to fix technical issues, improve page speed, and get pages indexed on Google.</div>
           <div class="skill-tags">
             <span class="tag">On-Page SEO</span>
             <span class="tag">Technical SEO</span>
@@ -1199,12 +1082,10 @@
           </div>
         </div>
 
-        <!-- Google Ads -->
         <div class="skill-card">
           <div class="skill-icon">📣</div>
           <div class="skill-name">Google Ads</div>
-          <div class="skill-desc">Building high-intent search campaigns with Quality Score optimization and CPL-focused
-            bidding strategy.</div>
+          <div class="skill-desc">Building high-intent search campaigns with Quality Score optimization and CPL-focused bidding strategy.</div>
           <div class="skill-tags">
             <span class="tag">Keyword Research</span>
             <span class="tag">Ad Copywriting</span>
@@ -1213,12 +1094,10 @@
           </div>
         </div>
 
-        <!-- Meta Ads -->
         <div class="skill-card">
           <div class="skill-icon">📱</div>
           <div class="skill-name">Meta Ads</div>
-          <div class="skill-desc">Audience-first lead generation on Facebook & Instagram using A/B testing, lookalike
-            and retargeting segments.</div>
+          <div class="skill-desc">Audience-first lead generation on Facebook & Instagram using A/B testing, lookalike and retargeting segments.</div>
           <div class="skill-tags">
             <span class="tag">Lead Generation</span>
             <span class="tag">Lookalike Audiences</span>
@@ -1227,12 +1106,10 @@
           </div>
         </div>
 
-        <!-- Content Marketing -->
         <div class="skill-card">
           <div class="skill-icon">✍️</div>
           <div class="skill-name">Content Marketing</div>
-          <div class="skill-desc">Writing long-form SEO blog content with proper H1/H2 structure, meta descriptions,
-            internal links and CTAs.</div>
+          <div class="skill-desc">Writing long-form SEO blog content with proper H1/H2 structure, meta descriptions, internal links and CTAs.</div>
           <div class="skill-tags">
             <span class="tag">SEO Blog Writing</span>
             <span class="tag">Long-Form Content</span>
@@ -1241,12 +1118,10 @@
           </div>
         </div>
 
-        <!-- Analytics -->
         <div class="skill-card">
           <div class="skill-icon">📊</div>
           <div class="skill-name">Analytics & Reporting</div>
-          <div class="skill-desc">Tracking CTR, CPL, impressions and frequency data across campaigns to make data-driven
-            decisions.</div>
+          <div class="skill-desc">Tracking CTR, CPL, impressions and frequency data across campaigns to make data-driven decisions.</div>
           <div class="skill-tags">
             <span class="tag">Google Analytics 4</span>
             <span class="tag">Search Console</span>
@@ -1255,12 +1130,10 @@
           </div>
         </div>
 
-        <!-- Email Marketing -->
         <div class="skill-card">
           <div class="skill-icon">📧</div>
           <div class="skill-name">Email Marketing</div>
-          <div class="skill-desc">Designing segmented, automated email campaigns using Mailchimp to nurture leads and
-            boost conversions.</div>
+          <div class="skill-desc">Designing segmented, automated email campaigns using Mailchimp to nurture leads and boost conversions.</div>
           <div class="skill-tags">
             <span class="tag">Mailchimp</span>
             <span class="tag">Segmentation</span>
@@ -1269,12 +1142,10 @@
           </div>
         </div>
 
-        <!-- Social Media Marketing -->
         <div class="skill-card">
           <div class="skill-icon">📲</div>
           <div class="skill-name">Social Media Marketing</div>
-          <div class="skill-desc">Growing organic reach on Instagram & LinkedIn through strategic content, hashtags, and
-            consistent posting.</div>
+          <div class="skill-desc">Growing organic reach on Instagram & LinkedIn through strategic content, hashtags, and consistent posting.</div>
           <div class="skill-tags">
             <span class="tag">Instagram</span>
             <span class="tag">LinkedIn</span>
@@ -1283,12 +1154,10 @@
           </div>
         </div>
 
-        <!-- Creative Design -->
         <div class="skill-card">
           <div class="skill-icon">🎨</div>
           <div class="skill-name">Creative Design</div>
-          <div class="skill-desc">Designing scroll-stopping ad creatives, social media graphics and short-form videos
-            using Canva & CapCut.</div>
+          <div class="skill-desc">Designing scroll-stopping ad creatives, social media graphics and short-form videos using Canva & CapCut.</div>
           <div class="skill-tags">
             <span class="tag">Canva</span>
             <span class="tag">Ad Creatives</span>
@@ -1319,11 +1188,34 @@
           <p class="project-meta">Keyword Research · Responsive Search Ad · Ad Extensions · Negative Keywords</p>
           <ul class="project-points">
             <li>Built a <strong>live Google Search campaign</strong> on Google Ads platform — Responsive Search Ad with <strong>95.7% optimization score</strong></li>
-            <li>Researched and added <strong>10 high-intent keywords</strong> across phrase & broad match types — targeting buyer-intent searches</li>
-            <li>Wrote <strong>7 headlines & 3 descriptions</strong> for RSA format — Ad Strength: <strong>Good (95.7%)</strong></li>
+            <li>Researched and added <strong>10 high-intent keywords</strong> across phrase &amp; broad match types — targeting buyer-intent searches</li>
+            <li>Wrote <strong>7 headlines &amp; 3 descriptions</strong> for RSA format — Ad Strength: <strong>Good (95.7%)</strong></li>
             <li>Added <strong>15+ negative keywords</strong> (free, course, tutorial, jobs, salary etc.) to block irrelevant traffic</li>
-            <li>Set up <strong>4 sitelinks, 6 callouts & 1 structured snippet</strong> — covering Services, LinkedIn, Blog, Certifications & Contact</li>
+            <li>Set up <strong>4 sitelinks, 6 callouts &amp; 1 structured snippet</strong> — covering Services, LinkedIn, Blog, Certifications &amp; Contact</li>
           </ul>
+          <div class="case-study">
+            <div class="case-study-label">📋 Case Study Summary</div>
+            <div class="case-study-row">
+              <span class="cs-key">Goal</span>
+              <span class="cs-val">Drive buyer-intent traffic to my digital marketing services page using Google Search Ads</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Tools</span>
+              <span class="cs-val">Google Ads Platform, Google Keyword Planner</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Problem</span>
+              <span class="cs-val">Needed to reach clients actively searching for a digital marketer without wasting budget on irrelevant clicks</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Strategy</span>
+              <span class="cs-val">Researched 10 high-intent keywords, wrote 7 unique headlines for RSA, added 15+ negative keywords to filter out non-buyer traffic, and set up sitelinks + callouts for better CTR</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Result</span>
+              <span class="cs-val">Achieved Ad Strength of 95.7% (Good rating) — campaign fully configured and live on Google Ads platform</span>
+            </div>
+          </div>
           <div class="project-results">
             <div class="result-chip">Ad Strength 95.7%</div>
             <div class="result-chip">Good Rating</div>
@@ -1331,7 +1223,7 @@
             <div class="result-chip">Live on Google Ads</div>
             <div class="result-chip">RSA Format</div>
           </div>
-           </div> 
+        </div>
 
         <!-- PROJECT 2: Meta Ads -->
         <div class="project-card">
@@ -1340,7 +1232,7 @@
             <span class="project-date">Mar 2026</span>
           </div>
           <h3 class="project-title">Meta Lead Generation Campaign</h3>
-          <p class="project-meta">Facebook & Instagram Ads • Simulated Campaign</p>
+          <p class="project-meta">Facebook &amp; Instagram Ads • Simulated Campaign</p>
           <ul class="project-points">
             <li>Defined <strong>3 audience segments</strong> — interest-based, lookalike, and retargeting</li>
             <li>Designed <strong>2 ad creative variations</strong> for A/B testing (image vs carousel)</li>
@@ -1348,6 +1240,29 @@
             <li>Estimated reach: <strong>15,000–20,000 users</strong> on ₹500/day budget</li>
             <li>Tracked key metrics: <strong>CTR, CPL, frequency</strong> — documented in campaign report</li>
           </ul>
+          <div class="case-study">
+            <div class="case-study-label">📋 Case Study Summary</div>
+            <div class="case-study-row">
+              <span class="cs-key">Goal</span>
+              <span class="cs-val">Generate quality leads on Facebook &amp; Instagram at the lowest possible cost per lead (CPL)</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Tools</span>
+              <span class="cs-val">Meta Ads Manager, Meta Business Suite</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Problem</span>
+              <span class="cs-val">Generic targeting wastes budget — needed to reach only high-intent, relevant audiences across different funnel stages</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Strategy</span>
+              <span class="cs-val">Built 3 separate audience segments (interest, lookalike, retargeting), A/B tested image vs carousel creatives, and optimized the campaign for lead form conversions</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Result</span>
+              <span class="cs-val">Projected reach of 15,000–20,000 users at ₹500/day budget with documented CTR, CPL &amp; frequency metrics</span>
+            </div>
+          </div>
           <div class="project-results">
             <div class="result-chip">3 Audience Segments</div>
             <div class="result-chip">A/B Tested Creatives</div>
@@ -1364,18 +1279,37 @@
           <h3 class="project-title">SEO Audit – aditishukla.in</h3>
           <p class="project-meta">On-Page SEO • Google Search Console • Real Project</p>
           <ul class="project-points">
-            <li>Conducted comprehensive <strong>technical site audit</strong> identifying critical crawl/indexability
-              gaps</li>
-            <li>Optimized <strong>on-page elements</strong> (Title tags, Meta descriptions, H1-H3 hierarchy) to boost
-              relevance</li>
-            <li>Enhanced <strong>Core Web Vitals</strong>, reducing mobile load speed from 3.8s to < 2.0s</li>
+            <li>Conducted comprehensive <strong>technical site audit</strong> identifying critical crawl/indexability gaps</li>
+            <li>Optimized <strong>on-page elements</strong> (Title tags, Meta descriptions, H1-H3 hierarchy) to boost relevance</li>
+            <li>Enhanced <strong>Core Web Vitals</strong>, reducing mobile load speed from 3.8s to &lt; 2.0s</li>
             <li>Fixed <strong>XML sitemap and robots.txt</strong> errors to ensure 100% Google indexing status</li>
-            <li>Implemented <strong>canonical tags and image alt-text</strong> to resolve duplicate
-              content/accessibility issues</li>
-            <li>Leveraged <strong>Google Search Console</strong> to track CTR and organic keyword ranking improvements
-            </li>
+            <li>Implemented <strong>canonical tags and image alt-text</strong> to resolve duplicate content/accessibility issues</li>
+            <li>Leveraged <strong>Google Search Console</strong> to track CTR and organic keyword ranking improvements</li>
           </ul>
-         <div class="project-results">
+          <div class="case-study">
+            <div class="case-study-label">📋 Case Study Summary</div>
+            <div class="case-study-row">
+              <span class="cs-key">Goal</span>
+              <span class="cs-val">Improve organic visibility and Google indexing of my own portfolio website</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Tools</span>
+              <span class="cs-val">Google Search Console, GA4, Google PageSpeed Insights</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Problem</span>
+              <span class="cs-val">Site had slow load speed (3.8s), missing meta tags, broken sitemap, and no canonical tags — causing poor crawlability</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Strategy</span>
+              <span class="cs-val">Ran a full technical audit, fixed on-page SEO elements (title, meta, H1-H3), optimized images, corrected sitemap &amp; robots.txt, and tracked improvements via Search Console</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Result</span>
+              <span class="cs-val">Load speed dropped from 3.8s → 2s, CTR reached 12.5% (vs 2–3% industry avg), Avg. Position 7.1 with 24 impressions tracked</span>
+            </div>
+          </div>
+          <div class="project-results">
             <div class="result-chip">CTR: 12.5%</div>
             <div class="result-chip">24 Impressions</div>
             <div class="result-chip">Avg Position: 7.1</div>
@@ -1397,23 +1331,41 @@
           <p class="project-subtitle">Aditi Shukla | Digital Marketing Blog</p>
           <p class="project-meta">SEO Content Writing • Blogger • Google Analytics 4</p>
           <ul class="project-points">
-            <li>Created a personal blog: <strong>"Expert insights on SEO, Social Media, Content Marketing & Paid
-                Ads"</strong></li>
-            <li>Published a <strong>long-form beginner guide</strong> — "What is Digital Marketing? Complete Beginner
-              Guide for India (2026)" (1,000+ words)</li>
-            <li>Covered <strong>6 core channels</strong>: SEO, Social Media, Content, Email, Google Ads & Meta Ads with
-              India-specific context</li>
-            <li>Structured with proper <strong>H1/H2 headings, meta description, labels & internal links</strong> for
-              SEO</li>
+            <li>Created a personal blog: <strong>"Expert insights on SEO, Social Media, Content Marketing &amp; Paid Ads"</strong></li>
+            <li>Published a <strong>long-form beginner guide</strong> — "What is Digital Marketing? Complete Beginner Guide for India (2026)" (1,000+ words)</li>
+            <li>Covered <strong>6 core channels</strong>: SEO, Social Media, Content, Email, Google Ads &amp; Meta Ads with India-specific context</li>
+            <li>Structured with proper <strong>H1/H2 headings, meta description, labels &amp; internal links</strong> for SEO</li>
             <li>Featured a <strong>5-step career roadmap</strong> for aspiring digital marketers in India</li>
           </ul>
+          <div class="case-study">
+            <div class="case-study-label">📋 Case Study Summary</div>
+            <div class="case-study-row">
+              <span class="cs-key">Goal</span>
+              <span class="cs-val">Build a live SEO-optimized blog to demonstrate content writing and on-page SEO skills</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Tools</span>
+              <span class="cs-val">Blogger Platform, Google Analytics 4, Google Search Console</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Problem</span>
+              <span class="cs-val">Needed real published content that proves ability to write structured, SEO-friendly long-form articles</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Strategy</span>
+              <span class="cs-val">Wrote a 1,000+ word guide targeting beginner digital marketers in India, structured with H1/H2 tags, internal links, meta description, and clear CTAs throughout</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Result</span>
+              <span class="cs-val">Blog is live, indexed on Google, and tracked via GA4 — covering all 6 digital marketing channels with India-specific context</span>
+            </div>
+          </div>
           <div class="project-results">
             <div class="result-chip">Live on Google</div>
             <div class="result-chip">SEO Optimized</div>
             <div class="result-chip">Blogger Platform</div>
           </div>
-          <a href="https://blog.aditishukla.in" target="_blank" class="project-link"
-            style="margin-top:0.8rem; align-self:flex-start;">
+          <a href="https://blog.aditishukla.in" target="_blank" class="project-link" style="margin-top:0.8rem; align-self:flex-start;">
             🌐 Read My Blog →
           </a>
         </div>
@@ -1427,16 +1379,35 @@
           <h3 class="project-title">Email Marketing Automation Campaign</h3>
           <p class="project-meta">Mailchimp • Lead Magnet • Automation Sequence</p>
           <ul class="project-points">
-            <li>Created a <strong>lead magnet PDF</strong> — "5 Steps to Start Digital Marketing in India" to capture
-              email subscribers</li>
+            <li>Created a <strong>lead magnet PDF</strong> — "5 Steps to Start Digital Marketing in India" to capture email subscribers</li>
             <li>Built a <strong>3-email automated welcome sequence</strong> in Mailchimp — triggered on sign-up</li>
-            <li>Segmented audience into <strong>2 groups</strong> — beginners & working professionals — for personalized
-              content</li>
-            <li>Designed emails with <strong>clear CTA buttons</strong>, subject line A/B testing for higher open rates
-            </li>
-            <li>Tracked key metrics: <strong>Open Rate, CTR & Unsubscribe Rate</strong> to optimize future campaigns
-            </li>
+            <li>Segmented audience into <strong>2 groups</strong> — beginners &amp; working professionals — for personalized content</li>
+            <li>Designed emails with <strong>clear CTA buttons</strong>, subject line A/B testing for higher open rates</li>
+            <li>Tracked key metrics: <strong>Open Rate, CTR &amp; Unsubscribe Rate</strong> to optimize future campaigns</li>
           </ul>
+          <div class="case-study">
+            <div class="case-study-label">📋 Case Study Summary</div>
+            <div class="case-study-row">
+              <span class="cs-key">Goal</span>
+              <span class="cs-val">Build an automated email funnel to nurture leads and demonstrate Mailchimp skills</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Tools</span>
+              <span class="cs-val">Mailchimp, Canva (for email design)</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Problem</span>
+              <span class="cs-val">One generic email to all subscribers leads to low engagement — needed personalized, segmented communication</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Strategy</span>
+              <span class="cs-val">Created a lead magnet PDF to grow the list, segmented subscribers into 2 groups, built a 3-email automation sequence with A/B tested subject lines</span>
+            </div>
+            <div class="case-study-row">
+              <span class="cs-key">Result</span>
+              <span class="cs-val">Fully automated welcome sequence live in Mailchimp — tracking Open Rate, CTR &amp; Unsubscribe Rate for ongoing optimization</span>
+            </div>
+          </div>
           <div class="project-results">
             <div class="result-chip">3-Email Sequence</div>
             <div class="result-chip">2 Segments</div>
@@ -1446,7 +1417,6 @@
 
       </div>
     </section>
-
 
     <div class="divider"></div>
 
@@ -1503,16 +1473,14 @@
       <h2 class="section-title">Certifications</h2>
       <p class="section-sub">Certified by Google — validating hands-on expertise in digital marketing.</p>
       <div class="cert-grid fade-in">
-        <a href="https://skillshop.credential.net/a134e9f7-4f79-4ae2-ab95-a5fd080c7d91#acc.qZu1J0UM" target="_blank"
-          class="cert-card">
+        <a href="https://skillshop.credential.net/a134e9f7-4f79-4ae2-ab95-a5fd080c7d91#acc.qZu1J0UM" target="_blank" class="cert-card">
           <div class="cert-icon">🏆</div>
           <div>
             <div class="cert-name">Google Analytics Certification</div>
             <div class="cert-issuer">Google</div>
           </div>
         </a>
-        <a href="https://skillshop.credential.net/309833a7-3149-4334-a537-bf592fdd0612#acc.DYqCvGQR" target="_blank"
-          class="cert-card">
+        <a href="https://skillshop.credential.net/309833a7-3149-4334-a537-bf592fdd0612#acc.DYqCvGQR" target="_blank" class="cert-card">
           <div class="cert-icon">🎓</div>
           <div>
             <div class="cert-name">Google Ads Display Certification</div>
@@ -1527,8 +1495,7 @@
     <section id="contact">
       <div class="section-label">Let's Connect</div>
       <h2 class="section-title">Get In Touch</h2>
-      <p class="section-sub">Looking for a digital marketer who can drive results? Let's talk about how I can help your
-        business grow online.</p>
+      <p class="section-sub">Looking for a digital marketer who can drive results? Let's talk about how I can help your business grow online.</p>
       <div class="contact-container fade-in" style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; text-align: left;">
         <div>
           <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Let's Talk Strategy</h3>
@@ -1568,7 +1535,6 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger-btn');
     const navLinks = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
@@ -1584,5 +1550,4 @@
   </script>
 
 </body>
-
 </html>
