@@ -66,6 +66,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preload" href="photo.jpg" as="image" fetchpriority="high" />
   <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" as="style"
     onload="this.onload=null;this.rel='stylesheet'" />
@@ -1569,6 +1571,16 @@
       }
     }
   </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EVWT25MH11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EVWT25MH11');
+  </script>
 </head>
 
 <body>
@@ -1623,7 +1635,7 @@
         </div>
       </div>
       <div class="hero-photo-wrap">
-        <img src="photo.jpg" alt="Aditi Shukla - Digital Marketing Specialist" class="hero-photo" />
+        <img src="photo.jpg" alt="Aditi Shukla - Digital Marketing Specialist" class="hero-photo" fetchpriority="high" decoding="async" />
       </div>
     </section>
 
