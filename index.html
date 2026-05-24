@@ -92,7 +92,7 @@
       --accent: #8b5cf6;
       --accent2: #a78bfa;
       --text: #f0ece4;
-      --muted: #8a8a8a;
+      --muted: #a3a3a3;
       --light: #c8c4bc;
     }
 
@@ -2125,7 +2125,7 @@
           <input type="email" name="Email" placeholder="Your Email" required
             style="padding: 0.8rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); outline: none; transition: border-color 0.2s;"
             onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
-          <select name="Service" required
+          <select name="Service" aria-label="Service Needed" required
             style="padding: 0.8rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); outline: none; transition: border-color 0.2s;"
             onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
             <option value="" disabled selected>Service Needed</option>
