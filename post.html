@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post | Aditi Shukla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/blog-style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Aditi<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html" style="color: var(--accent);">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container" style="max-width: 800px; padding-top: 10rem;">
+    <a href="blog.html" style="color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; font-weight: 500; transition: color 0.2s;">
+      <span>←</span> Back to Blog
+    </a>
+
+    <div id="postContainer">
+      <div style="text-align: center; padding: 4rem; color: var(--muted);">Loading post...</div>
+    </div>
+  </div>
+
+  <script type="module" src="js/blog.js"></script>
+  <script type="module">
+    async function loadPost() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get('id');
+      const container = document.getElementById('postContainer');
+
+      if (!postId) {
+        container.innerHTML = '<div style="text-align: center; color: #ef4444; padding: 4rem;">Post ID not provided.</div>';
+        return;
+      }
+
+      // Wait slightly to ensure window.blogAPI is attached
+      await new Promise(r => setTimeout(r, 100));
+
+      const post = await window.blogAPI.getBlogPost(postId);
+
+      if (!post) {
+        container.innerHTML = '<div style="text-align: center; color: #ef4444; padding: 4rem;">Post not found. It may have been deleted.</div>';
+        return;
+      }
+
+      // Update page title
+      document.title = post.title + ' | Aditi Shukla';
+
+      // Inject content
+      container.innerHTML = `
+        <header class="post-header">
+          <div class="post-meta">${window.blogAPI.formatDate(post.date)}</div>
+          <h1 class="post-title">${post.title}</h1>
+        </header>
+        
+        <img src="${post.image}" alt="${post.title}" class="post-image">
+        
+        <div class="post-content">
+          ${post.content}
+        </div>
+      `;
+    }
+
+    loadPost();
+  </script>
+</body>
+</html>

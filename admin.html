@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Aditi Shukla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/blog-style.css" />
+  <style>
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .admin-title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .post-list {
+      margin-top: 3rem;
+    }
+    .post-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .post-list-title {
+      font-weight: 600;
+    }
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Aditi<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="admin.html" style="color: var(--accent);">Admin</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="admin-header">
+      <h1 class="admin-title">Blog Admin</h1>
+    </div>
+
+    <div class="admin-card">
+      <h2 style="margin-bottom: 1.5rem;">Create New Post</h2>
+      <form id="postForm">
+        <div class="form-group">
+          <label for="postTitle">Post Title</label>
+          <input type="text" id="postTitle" class="form-control" required placeholder="Enter post title...">
+        </div>
+        
+        <div class="form-group">
+          <label for="postImage">Featured Image URL</label>
+          <input type="url" id="postImage" class="form-control" placeholder="https://images.unsplash.com/...">
+        </div>
+
+        <div class="form-group">
+          <label for="postExcerpt">Short Excerpt</label>
+          <textarea id="postExcerpt" class="form-control" style="min-height: 80px;" required placeholder="Brief summary of the post..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="postContent">Full Content (HTML/Text)</label>
+          <textarea id="postContent" class="form-control" required placeholder="Write your post content here..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Publish Post</button>
+      </form>
+    </div>
+
+    <div class="post-list" id="adminPostList">
+      <h2 style="margin-bottom: 1.5rem;">Manage Posts</h2>
+      <!-- Posts will be injected here via JS -->
+    </div>
+  </div>
+
+  <script type="module" src="js/blog.js"></script>
+  <script type="module">
+    // Handle form submission
+    document.getElementById('postForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const newPost = {
+        title: document.getElementById('postTitle').value,
+        image: document.getElementById('postImage').value || 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&q=80&w=1000',
+        excerpt: document.getElementById('postExcerpt').value,
+        content: document.getElementById('postContent').value
+      };
+
+      try {
+        await window.blogAPI.saveBlogPost(newPost);
+        alert('Post Published Successfully!');
+        this.reset();
+        loadAdminPosts();
+      } catch (err) {
+        alert('Failed to save post. Please make sure Firebase permissions allow writing.');
+      }
+    });
+
+    // Load posts for management
+    async function loadAdminPosts() {
+      const listContainer = document.getElementById('adminPostList');
+      listContainer.innerHTML = '<h2 style="margin-bottom: 1.5rem;">Manage Posts</h2><p style="color: var(--muted);">Loading posts...</p>';
+      
+      const posts = await window.blogAPI.getBlogPosts();
+      
+      let html = '<h2 style="margin-bottom: 1.5rem;">Manage Posts</h2>';
+      
+      if (posts.length === 0) {
+        html += '<p style="color: var(--muted);">No posts published yet.</p>';
+      } else {
+        posts.forEach(post => {
+          html += `
+            <div class="post-list-item">
+              <div>
+                <div class="post-list-title">${post.title}</div>
+                <div style="font-size: 0.8rem; color: var(--muted);">${window.blogAPI.formatDate(post.date)}</div>
+              </div>
+              <div>
+                <a href="post.html?id=${post.id}" class="btn-primary" style="padding: 0.5rem 1rem; margin-right: 0.5rem;" target="_blank">View</a>
+                <button class="btn-danger" onclick="deletePost('${post.id}')">Delete</button>
+              </div>
+            </div>
+          `;
+        });
+      }
+      
+      listContainer.innerHTML = html;
+    }
+
+    // Handle post deletion
+    window.deletePost = async function(id) {
+      if(confirm('Are you sure you want to delete this post?')) {
+        await window.blogAPI.deleteBlogPost(id);
+        loadAdminPosts();
+      }
+    };
+
+    // Wait slightly to ensure window.blogAPI is attached
+    setTimeout(loadAdminPosts, 100);
+  </script>
+</body>
+</html>

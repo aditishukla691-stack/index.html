@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Aditi Shukla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/blog-style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Aditi<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html" style="color: var(--accent);">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <div style="font-size: 0.75rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 1rem;">Latest Insights</div>
+      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1;">My <span style="color: var(--accent);">Blog</span></h1>
+      <p style="color: var(--muted); margin-top: 1rem; font-size: 1.1rem;">Thoughts on Digital Marketing, SEO, and Growth.</p>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+      <!-- Posts injected via JS -->
+    </div>
+  </div>
+
+  <script type="module" src="js/blog.js"></script>
+  <script type="module">
+    async function loadPosts() {
+      const grid = document.getElementById('blogGrid');
+      grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--muted);">Loading posts...</div>';
+      
+      // Wait slightly to ensure window.blogAPI is attached
+      await new Promise(r => setTimeout(r, 100));
+      
+      const posts = await window.blogAPI.getBlogPosts();
+
+      if (posts.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--muted); background: var(--card); border: 1px solid var(--border); border-radius: 12px;">No blog posts found. Please visit the <a href="admin.html" style="color: var(--accent);">Admin Panel</a> to create one.</div>';
+        return;
+      }
+
+      let html = '';
+      posts.forEach(post => {
+        html += `
+          <a href="post.html?id=${post.id}" class="blog-card">
+            <img src="${post.image}" alt="${post.title}" class="blog-card-image" loading="lazy">
+            <div class="blog-card-content">
+              <div class="blog-card-date">${window.blogAPI.formatDate(post.date)}</div>
+              <h2 class="blog-card-title">${post.title}</h2>
+              <p class="blog-card-excerpt">${post.excerpt}</p>
+              <div style="margin-top: 1rem; color: var(--accent); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                Read Article <span style="font-size: 1.2rem;">→</span>
+              </div>
+            </div>
+          </a>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+    
+    loadPosts();
+  </script>
+</body>
+</html>
