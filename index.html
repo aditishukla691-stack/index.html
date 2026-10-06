@@ -219,7 +219,7 @@
 
     h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
       font-weight: 800;
       line-height: 1.0;
       letter-spacing: -0.03em;
@@ -820,7 +820,7 @@
       
       <div class="hero-stats">
         <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Projects Worked On</div></div>
-        <div class="stat"><div class="stat-num">3+ M</div><div class="stat-label">Professional Exp</div></div>
+        
         <div class="stat"><div class="stat-num">SEO</div><div class="stat-label">Organic Growth</div></div>
       </div>
     </div>
@@ -837,7 +837,7 @@
     <div class="section-title">Driven by Practical Execution</div>
     <p class="section-sub">I am an SEO-focused digital marketer dedicated to transforming learning into practical execution. My approach is rooted in understanding search intent, taking ownership of real projects, and consistently improving through hands-on analysis and experience.</p>
     
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
       <span class="tag">Moving to practical execution</span>
       <span class="tag">Working on real projects</span>
       <span class="tag">Understanding search intent</span>
@@ -946,8 +946,8 @@
           <li><strong>Research:</strong> Full crawl using Screaming Frog, identified broken links.</li>
           <li><strong>Strategy:</strong> Fix technical errors first, optimize robots.txt and sitemap.</li>
           <li><strong>Execution:</strong> Resolved 404 errors, optimized meta tags across top 20 pages.</li>
-          <li><strong style="color:var(--accent);">Result:</strong> [Add your verified numbers here]</li>
         </ul>
+        <div style="margin-top: 1rem; color: var(--light); font-size: 0.85rem;"><strong style="color:var(--accent);">Result:</strong> [Add your verified numbers here]</div>
       </div>
 
       <!-- Case Study 2 -->
@@ -960,8 +960,8 @@
           <li><strong>Research:</strong> Analyzed search intent, identified content gaps.</li>
           <li><strong>Strategy:</strong> Restructure headings, integrate LSI keywords.</li>
           <li><strong>Execution:</strong> Rewrote meta descriptions, optimized H1/H2 tags.</li>
-          <li><strong style="color:var(--accent);">Result:</strong> [Add your verified numbers here]</li>
         </ul>
+        <div style="margin-top: 1rem; color: var(--light); font-size: 0.85rem;"><strong style="color:var(--accent);">Result:</strong> [Add your verified numbers here]</div>
       </div>
 
       <!-- Case Study 3 -->
@@ -973,9 +973,9 @@
           <li><strong>Challenge:</strong> Local service business struggled to appear in Map Pack.</li>
           <li><strong>Research:</strong> Audited GBP profile and analyzed local competitors.</li>
           <li><strong>Strategy:</strong> Standardize NAP information, optimize GBP categories.</li>
-          <li><strong>Execution:</strong> Added geo-tagged images, created location-specific content.</li>
-          <li><strong style="color:var(--accent);">Result:</strong> [Add your verified numbers here]</li>
+          <li><strong>Execution:</strong> Created location-specific content and optimized GBP profile.</li>
         </ul>
+        <div style="margin-top: 1rem; color: var(--light); font-size: 0.85rem;"><strong style="color:var(--accent);">Result:</strong> [Add your verified numbers here]</div>
       </div>
     </div>
     
@@ -1015,6 +1015,70 @@
 
   <div class="divider"></div>
   
+<div class="divider"></div>
+
+  <!-- PRICING / SERVICES SECTION -->
+  <style id="pricing-section-styles">
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 5rem; }
+    .pricing-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem 2rem; display: flex; flex-direction: column; transition: all 0.3s; position: relative; }
+    .pricing-card:hover { border-color: rgba(124,58,237,0.5); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .pricing-name { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+    .pricing-desc { font-size: 0.85rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 500;}
+    .pricing-bullets { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
+    .pricing-bullets li { font-size: 0.85rem; color: var(--light); padding-left: 1.5rem; position: relative; margin-bottom: 0.8rem; }
+    .pricing-bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+    .pricing-model { font-size: 0.75rem; text-transform: uppercase; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 0.3rem;}
+    .pricing-btn { display: block; text-align: center; padding: 0.85rem; background: transparent; color: var(--text); font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 6px; text-decoration: none; transition: all 0.2s; }
+    .pricing-card:hover .pricing-btn { border-color: var(--accent); color: var(--accent); }
+    .pricing-btn:hover { background: rgba(124,58,237,0.1); }
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+    .faq-q { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.5rem; color: #fff; }
+    .faq-a { font-size: 0.9rem; color: var(--light); }
+  </style>
+  <section id="pricing">
+    <div class="section-label">Services</div>
+    <div class="section-title">How We Can Work Together</div>
+    <p class="section-sub">Every business has unique requirements. Review my core SEO and Content service areas below, and let's discuss a custom strategy tailored specifically to your organic growth goals.</p>
+    <div class="pricing-grid fade-in">
+      <div class="pricing-card">
+        <div class="pricing-name">Comprehensive SEO</div>
+        <div class="pricing-desc">Long-term organic growth and search visibility.</div>
+        <ul class="pricing-bullets">
+          <li>Keyword research & strategy</li>
+          <li>On-page & Technical SEO</li>
+          <li>Content optimization</li>
+          <li>Monthly performance reporting</li>
+        </ul>
+        <div class="pricing-model">Monthly Retainer</div>
+        <a href="#contact" class="pricing-btn">Get a Quote</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Technical SEO Audit</div>
+        <div class="pricing-desc">Find and fix issues holding your site back.</div>
+        <ul class="pricing-bullets">
+          <li>Site speed & Core Web Vitals</li>
+          <li>Crawlability & indexing checks</li>
+          <li>Mobile-friendliness review</li>
+          <li>Actionable implementation guide</li>
+        </ul>
+        <div class="pricing-model">Project-based</div>
+        <a href="#contact" class="pricing-btn">Get a Quote</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Content Marketing</div>
+        <div class="pricing-desc">Words that build authority and drive action.</div>
+        <ul class="pricing-bullets">
+          <li>SEO-optimized blog articles</li>
+          <li>Website & landing page copy</li>
+          <li>Content calendar creation</li>
+          <li>Search intent alignment</li>
+        </ul>
+        <div class="pricing-model">Project-based</div>
+        <a href="#contact" class="pricing-btn">Get a Quote</a>
+      </div>
+    </div>
+  </section>
   <section id="tools">
     <div class="section-label">Tech Stack</div>
     <div class="section-title">Tools I Use</div>
@@ -1025,7 +1089,7 @@
       <div class="tool-chip"><span class="tool-emoji">🌐</span> Ubersuggest</div>
       <div class="tool-chip"><span class="tool-emoji">🐸</span> Screaming Frog</div>
       <div class="tool-chip"><span class="tool-emoji">🗝️</span> Google Keyword Planner</div>
-      <div class="tool-chip"><span class="tool-emoji">🔎</span> Google Search</div>
+      
     </div>
   </section>
 
@@ -1040,15 +1104,13 @@
         <div class="timeline-dot"></div>
         <div class="timeline-card">
           <div class="timeline-badge">Professional Experience</div>
-          <div class="timeline-degree">SEO Intern | DT Digital Hub</div>
+          <div class="timeline-degree">SEO Executive | DT Digital Hub</div>
           <div class="timeline-school">Remote</div>
-          <div class="timeline-year">2026</div>
+          <div class="timeline-year">March 2026 &ndash; Present</div>
           <ul class="project-points" style="margin-top: 1rem;">
-            <li>Real project execution & SEO research</li>
-            <li>Content optimization & On-page SEO</li>
-            <li>Off-page activities & Local SEO</li>
-            <li>Competitor research & Performance monitoring</li>
-            <li>Handled multiple projects successfully</li>
+            <li>Conducted technical SEO audits for 5+ client websites.</li>
+            <li>Optimized 20+ web pages for target keywords and search intent.</li>
+            <li>Performed competitor research and monitored performance in Search Console.</li>
           </ul>
         </div>
       </div>
